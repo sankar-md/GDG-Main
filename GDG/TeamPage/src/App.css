@@ -1,0 +1,118 @@
+* {
+  @apply bg-[#19133C];
+}
+
+.header {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  padding: 2rem;
+  margin-top: 4rem; /* Adjust margin to fit the header */
+}
+
+.left,
+.right {
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 50%;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+.item {
+  position: absolute;
+  width: 12rem;
+  height: 14rem;
+  transition: transform 300ms cubic-bezier(0, 0.55, 0.45, 1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.left .inner {
+  perspective-origin: right center;
+}
+
+.right .inner {
+  perspective-origin: left center;
+}
+
+.left .item {
+  right: -10rem;
+}
+
+.right .item {
+  left: -10rem;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    perspective: 300px;
+  }
+  .item {
+    width: 10rem; /* Smaller card size */
+    height: 15rem; /* Smaller card size */
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 20px;
+  }
+  .logo {
+    width: 20px;
+  }
+  .logo-text {
+    font-size: 3vw;
+  }
+  .gallery {
+    padding: 1rem;
+  }
+  .left,
+  .right {
+    width: 100%;
+    justify-content: center;
+  }
+  .item {
+    width: 12rem; /* Smaller card size for mobile */
+    height: 15rem; /* Smaller card size for mobile */
+  }
+  .integrated-text {
+    font-size: 3vw;
+  }
+}
+
+.integrated-text {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Full width with some padding */
+}
+
+.integrated-text hr {
+  margin: 0.5rem auto; /* Centers the hr and adds vertical spacing */
+  border-top: 1px solid #ccc;
+  width: 40%; /* Adjust width as needed */
+}
